@@ -51,7 +51,7 @@ app.use(errorHandler);
 
 // Start server
 app.listen(SERVER_CONFIG.PORT, () => {
-  console.log(`🚀 Server running on port ${SERVER_CONFIG.PORT}`);
-  console.log(`📦 Package Optimizer API ready`);
-  console.log(`🌍 Environment: ${SERVER_CONFIG.NODE_ENV}`);
+  console.log(` Server running on port ${SERVER_CONFIG.PORT}`);
+  console.log(` Package Optimizer API ready`);
+  console.log(` Environment: ${SERVER_CONFIG.NODE_ENV}`);
 });
