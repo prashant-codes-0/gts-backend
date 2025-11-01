@@ -8,28 +8,31 @@ This project implements a feature-wise architecture for both backend and fronten
 
 ### Directory Structure
 ```
-src/
-├── config/
-│   ├── constants.js          # Application constants and business rules
-│   └── database.js           # Data configuration (mock database)
-├── models/
-│   ├── Product.js            # Product entity model
-│   └── Package.js            # Package entity model
-├── services/
-│   ├── ProductService.js     # Product business logic
-│   ├── ShippingService.js    # Shipping calculations
-│   └── PackageOptimizationService.js # Package optimization algorithms
-├── controllers/
-│   ├── ProductController.js  # Product HTTP request handlers
-│   └── OrderController.js    # Order HTTP request handlers
-├── routes/
-│   ├── productRoutes.js      # Product API routes
-│   ├── orderRoutes.js        # Order API routes
-│   └── index.js              # Main route configuration
-└── middleware/
-    ├── errorHandler.js       # Global error handling
-    ├── requestLogger.js      # Request logging
-    └── validation.js         # Input validation
+server/
+├── server.js                 # Express server entry point
+├── package.json              # Server dependencies and scripts
+└── src/
+    ├── config/
+    │   ├── constants.js      # Application constants and business rules
+    │   └── database.js       # Data configuration (mock database)
+    ├── models/
+    │   ├── Product.js        # Product entity model
+    │   └── Package.js        # Package entity model
+    ├── services/
+    │   ├── ProductService.js # Product business logic
+    │   ├── ShippingService.js # Shipping calculations
+    │   └── PackageOptimizationService.js # Package optimization algorithms
+    ├── controllers/
+    │   ├── ProductController.js # Product HTTP request handlers
+    │   └── OrderController.js   # Order HTTP request handlers
+    ├── routes/
+    │   ├── productRoutes.js  # Product API routes
+    │   ├── orderRoutes.js    # Order API routes
+    │   └── index.js          # Main route configuration
+    └── middleware/
+        ├── errorHandler.js   # Global error handling
+        ├── requestLogger.js  # Request logging
+        └── validation.js     # Input validation
 ```
 
 ### Key Features
@@ -65,36 +68,38 @@ src/
 
 ### Directory Structure
 ```
-src/
-├── config/
-│   ├── api.js                # API configuration and request utilities
-│   └── constants.js          # Frontend constants and business rules
-├── services/
-│   ├── ProductService.js     # Product API calls and data operations
-│   └── OrderService.js       # Order API calls and optimization logic
-├── hooks/
-│   ├── useProducts.js        # Product state management
-│   ├── useSelection.js       # Selection state management
-│   └── usePackageOptimization.js # Optimization state management
-├── components/
-│   ├── ProductList/
-│   │   ├── ProductList.js    # Product list container
-│   │   ├── ProductItem.js    # Individual product component
-│   │   ├── ProductList.css
-│   │   └── ProductItem.css
-│   ├── SelectionControls/
-│   │   ├── SelectionControls.js # Order controls and summary
-│   │   └── SelectionControls.css
-│   ├── PackageResults/
-│   │   ├── PackageResults.js # Results container
-│   │   ├── PackageCard.js    # Individual package display
-│   │   ├── OptimizationStats.js # Statistics display
-│   │   └── *.css files
-│   └── common/
-│       ├── LoadingSpinner.js # Reusable loading component
-│       ├── ErrorMessage.js   # Reusable error component
-│       └── *.css files
-└── App.js                    # Main application component
+client/
+├── package.json              # Client dependencies and scripts
+└── src/
+    ├── config/
+    │   ├── api.js            # API configuration and request utilities
+    │   └── constants.js      # Frontend constants and business rules
+    ├── services/
+    │   ├── ProductService.js # Product API calls and data operations
+    │   └── OrderService.js   # Order API calls and optimization logic
+    ├── hooks/
+    │   ├── useProducts.js    # Product state management
+    │   ├── useSelection.js   # Selection state management
+    │   └── usePackageOptimization.js # Optimization state management
+    ├── components/
+    │   ├── ProductList/
+    │   │   ├── ProductList.js    # Product list container
+    │   │   ├── ProductItem.js    # Individual product component
+    │   │   ├── ProductList.css
+    │   │   └── ProductItem.css
+    │   ├── SelectionControls/
+    │   │   ├── SelectionControls.js # Order controls and summary
+    │   │   └── SelectionControls.css
+    │   ├── PackageResults/
+    │   │   ├── PackageResults.js # Results container
+    │   │   ├── PackageCard.js    # Individual package display
+    │   │   ├── OptimizationStats.js # Statistics display
+    │   │   └── *.css files
+    │   └── common/
+    │       ├── LoadingSpinner.js # Reusable loading component
+    │       ├── ErrorMessage.js   # Reusable error component
+    │       └── *.css files
+    └── App.js                # Main application component
 ```
 
 ### Key Features

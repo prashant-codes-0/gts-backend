@@ -23,24 +23,45 @@ A Node.js + React solution for optimizing e-commerce order packages based on pri
 ## Project Structure
 
 ```
-├── server.js              # Express backend with optimization logic
-├── package.json           # Backend dependencies
+├── package.json           # Root package.json with workspace scripts
+├── server/                # Backend server
+│   ├── server.js          # Express server entry point
+│   ├── package.json       # Server dependencies
+│   └── src/               # Feature-wise backend architecture
+│       ├── config/        # Configuration and constants
+│       ├── models/        # Data models (Product, Package)
+│       ├── services/      # Business logic services
+│       ├── controllers/   # HTTP request handlers
+│       ├── routes/        # API route definitions
+│       └── middleware/    # Express middleware
 ├── client/                # React frontend
 │   ├── src/
-│   │   ├── App.js         # Main React component
-│   │   └── App.css        # Styling
+│   │   ├── components/    # React components by feature
+│   │   ├── hooks/         # Custom React hooks
+│   │   ├── services/      # API service layer
+│   │   ├── config/        # Frontend configuration
+│   │   └── App.js         # Main React component
 │   └── package.json       # Frontend dependencies
+├── ARCHITECTURE.md        # Detailed architecture documentation
 └── README.md
 ```
 
 ## Installation & Setup
 
-1. **Install backend dependencies**:
+### Option 1: Install All Dependencies at Once
+```bash
+npm run install-all
+```
+
+### Option 2: Install Separately
+1. **Install server dependencies**:
    ```bash
+   cd server
    npm install
+   cd ..
    ```
 
-2. **Install frontend dependencies**:
+2. **Install client dependencies**:
    ```bash
    cd client
    npm install
@@ -51,19 +72,22 @@ A Node.js + React solution for optimizing e-commerce order packages based on pri
 
 ### Development Mode (Recommended)
 
-1. **Start the backend server**:
+1. **Start both server and client concurrently**:
    ```bash
-   npm run server
+   npm run dev
    ```
 
-2. **In a new terminal, start the React development server**:
+2. **Or start them separately**:
    ```bash
-   cd client
-   npm start
+   # Terminal 1 - Start server
+   npm run server
+   
+   # Terminal 2 - Start client
+   npm run client
    ```
 
 3. **Access the application**:
-   - Frontend: http://localhost:3000
+   - Frontend: http://localhost:3001 (or 3000)
    - Backend API: http://localhost:5000
 
 ### Production Mode
